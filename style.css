@@ -1,0 +1,47 @@
+body {
+    background-image: url(images/login/céu.png);
+    background-size: cover;
+    margin: 0%;
+    padding: 0%;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+    background-color: rgba(98, 98, 220, 0.1);
+    height: 60%;
+    width: 30%;
+    border-radius: 30px;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+}
+
+.entradas {
+    display: flex;
+    flex-direction: column;
+}
+
+.acesso {
+
+}
+
