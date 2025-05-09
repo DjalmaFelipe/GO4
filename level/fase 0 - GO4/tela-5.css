@@ -1,0 +1,24 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    background-image: url(/images/fases/Go4-atual.png);
+    background-size: 1280px 566px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: rgba(95, 158, 160, 0.2);
+    height: 30%;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: large;
+    font-style: bold;
+}
