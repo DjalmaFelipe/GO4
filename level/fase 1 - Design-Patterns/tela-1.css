@@ -1,7 +1,7 @@
 body {
     padding: 0%;
     margin: 0%;
-    background-color: wheat;
+    background-color: #dcc599;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 20%;
-    background-color:steelblue;
+    background-color: #6a7e86;
     color: whitesmoke;
 }
 
@@ -24,7 +24,7 @@ body {
     color: gray;
     height: 20%;
     text-align: center;
-    background-color: wheat;
+    background-color: #dcc599;
     font-family: "Shadows Into Light", cursive;
     font-size: 50px;
     font-weight: 400;
@@ -53,6 +53,6 @@ button {
     background-color: rgba(0, 128, 0, 0.7);
     color: white;
     padding: 0.8% 2%;
-    font-family: "Shadows Into Light", cursive;
+    font-family: cursive;
     font-size: large;
 }

@@ -12,13 +12,15 @@ body {
 }
 
 .card {
-    background-color: rgba(95, 158, 160, 0.2);
-    height: 30%;
-    width: 60%;
+    background-color: rgba(20, 20, 20, 0.5);
+    color: #FFFFFF;
+    height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(0, 0, 0, 0.7);
     font-size: large;
     font-style: bold;
+    text-align: center;
+    font-family:monospace;
 }

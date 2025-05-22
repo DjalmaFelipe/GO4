@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GO4 - Design Patterns</title>
+    <link rel="stylesheet" href="design-patterns.css">
+    <script type="module" src="design-patterns.js" defer></script>
+</head>
+
+<body>
+    <section class="score">
+        <article class="star">
+            <img src="/images/fases/star-svgrepo-com.svg">
+        </article>
+        <article>
+            <span>
+                0000
+            </span>
+        </article>
+        <article class="time">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <g fill="none" fill-rule="evenodd">
+                        <path fill="#ECECEC"
+                            d="M20,7 C20,21.9116882 28.2439533,34 33,34 C37.7560467,34 46,21.9116882 46,7 L20,7 Z">
+                        </path>
+                        <path fill="#ECECEC"
+                            d="M20,31 C20,45.9116882 28.2439533,58 33,58 C37.7560467,58 46,45.9116882 46,31 L20,31 Z"
+                            transform="matrix(1 0 0 -1 0 89)"></path>
+                        <path fill="#FFDD95"
+                            d="M22,7 C22,18.5979797 28.9756528,28 33,28 C37.0243472,28 44,18.5979797 44,7 L22,7 Z"
+                            transform="matrix(-1 0 0 1 66 0)"></path>
+                        <rect width="30" height="3" x="18" y="4" fill="#FFAF40" rx="1"></rect>
+                        <rect width="30" height="3" x="18" y="58" fill="#FFAF40" rx="1"></rect>
+                        <path stroke="#FFDD95" stroke-linecap="round" stroke-width="2"
+                            d="M33 34L33 35.6509456M33 41.4033174L33 43.0542631"></path>
+                    </g>
+                </g>
+            </svg>
+            <!-- <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g fill="none" fill-rule="evenodd"> <path fill="#ECECEC" d="M18,7 C18,21.9116882 26.2439533,34 31,34 C35.7560467,34 44,21.9116882 44,7 L18,7 Z"></path> <path fill="#ECECEC" d="M18,31 C18,45.9116882 26.2439533,58 31,58 C35.7560467,58 44,45.9116882 44,31 L18,31 Z" transform="matrix(1 0 0 -1 0 89)"></path> <path fill="#FFDD95" d="M20,42 C20,50.836556 26.9756528,58 31,58 C35.0243472,58 42,50.836556 42,42 L20,42 Z" transform="matrix(1 0 0 -1 0 100)"></path> <path fill="#FFDD95" d="M24,20 C24,25.5228475 28.4390518,30 31,30 C33.5609482,30 38,25.5228475 38,20 L24,20 Z" transform="matrix(-1 0 0 1 62 0)"></path> <rect width="30" height="3" x="16" y="4" fill="#FFAF40" rx="1"></rect> <rect width="30" height="3" x="16" y="58" fill="#FFAF40" rx="1"></rect> </g> </g></svg>
+              -->
+            <!-- <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <g fill="none" fill-rule="evenodd">
+                        <path fill="#ECECEC"
+                            d="M19,7 C19,21.9116882 27.2439533,34 32,34 C36.7560467,34 45,21.9116882 45,7 L19,7 Z">
+                        </path>
+                        <path fill="#ECECEC"
+                            d="M19,31 C19,45.9116882 27.2439533,58 32,58 C36.7560467,58 45,45.9116882 45,31 L19,31 Z"
+                            transform="matrix(1 0 0 -1 0 89)"></path>
+                        <path fill="#FFDD95"
+                            d="M21,37 C21,48.5979797 27.9756528,58 32,58 C36.0243472,58 43,48.5979797 43,37 L21,37 Z"
+                            transform="matrix(1 0 0 -1 0 95)"></path>
+                        <rect width="30" height="3" x="17" y="4" fill="#FFAF40" rx="1"></rect>
+                        <rect width="30" height="3" x="17" y="58" fill="#FFAF40" rx="1"></rect>
+                    </g>
+                </g>
+            </svg> -->
+        </article>
+        <article>
+            <span id="minutos">00</span><span> : </span><span id="segundos">20</span>
+        </article>
+    </section>
+    <section class="conteudo">
+        <section class="questao">
+            <span id="questao"></span>
+        </section>
+        <section class="alternativas">
+            <article id="alternativa-1">
+                <span id="resposta-1"></span>
+            </article>
+            <article id="alternativa-2">
+                <span id="resposta-2"></span>
+            </article>
+            <article id="alternativa-3">
+                <span id="resposta-3"></span>
+            </article>
+            <article id="alternativa-4">
+                <span id="resposta-4"></span>
+            </article>
+        </section>
+    </section>
+</body>
+
+</html>
