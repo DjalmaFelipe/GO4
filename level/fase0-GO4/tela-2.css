@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: end;
+}
+
+.legenda {
+    opacity: 0;
+    padding-bottom: 5%;
+    color: white;
+    animation-name: legenda;
+    animation-duration: 1.5s;
+    animation-iteration-count: 4;
+    animation-timing-function: linear;
+}
+
+@keyframes legenda {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

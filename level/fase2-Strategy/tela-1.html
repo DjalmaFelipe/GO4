@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fase Strategy - Jogo de Padrões de Projeto</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eee;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: white;
+      width: 80%;
+      max-width: 900px;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+    }
+    .game-area {
+      text-align: center;
+    }
+    #gameBox {
+      width: 300px;
+      height: 300px;
+      background-color: #cce5ff;
+      margin: 1rem auto;
+      position: relative;
+    }
+    #player {
+      width: 30px;
+      height: 30px;
+      background-color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .attack-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    button:disabled {
+      background-color: #a8c5e5;
+      cursor: not-allowed;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    #enemyInfo {
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="screen1">
+      <h2>Entendendo o Padrão Strategy</h2>
+      <p>O padrão Strategy permite definir uma família de algoritmos, encapsulá-los e torná-los intercambiáveis. Isso significa que você pode mudar o comportamento de um objeto em tempo de execução usando diferentes "estratégias" de forma flexível.</p>
+      <p>Por exemplo, em um jogo, diferentes estratégias de ataque podem ser aplicadas a um personagem dependendo da situação ou inimigo encontrado.</p>
+      <div class="buttons">
+        <div></div>
+        <button onclick="nextScreen()">Avançar</button>
+      </div>
+    </div>
+
+    <div id="screen2" style="display:none">
+      <h2>Exemplo de Código - Estratégias de Ataque</h2>
+      <pre>
+class Ataque {
+  executar() {
+    console.log("Ataque padrão!");
+  }
+}
+
+class AtaqueFogo extends Ataque {
+  executar() {
+    console.log("Ataque de Fogo!");
+  }
+}
+
+class AtaqueGelo extends Ataque {
+  executar() {
+    console.log("Ataque de Gelo!");
+  }
+}
+
+class Inimigo {
+  constructor(tipo) {
+    this.tipo = tipo;
+  }
+  definirEstrategia() {
+    if (this.tipo === "fogo") return new AtaqueGelo();
+    if (this.tipo === "gelo") return new AtaqueFogo();
+    return new Ataque();
+  }
+}</pre>
+      <div class="buttons">
+        <button onclick="prevScreen()">Voltar</button>
+        <button onclick="nextScreen()">Avançar</button>
+      </div>
+    </div>
+
+    <div id="screen3" style="display:none">
+      <h2>Desafio: Use o Strategy!</h2>
+      <p id="enemyInfo"></p>
+      <div class="game-area">
+        <div id="gameBox">
+          <div id="player"></div>
+        </div>
+        <div class="attack-buttons">
+          <button onclick="useAttack('fogo')">Ataque de Fogo</button>
+          <button onclick="useAttack('gelo')">Ataque de Gelo</button>
+          <button onclick="useAttack('padrão')">Ataque Padrão</button>
+        </div>
+        <div class="buttons">
+          <button onclick="resetGame()">Reiniciar Fase</button>
+          <button onclick="prevScreen()">Voltar</button>
+          <button id="nextBtn" onclick="nextScreen()" disabled>Avançar</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="screen4" style="display:none">
+      <h2>O que aprendemos?</h2>
+      <p>Você enfrentou inimigos com diferentes fraquezas e precisou escolher a estratégia correta para derrotá-los. Esse é o padrão Strategy em ação: você aplicou comportamentos diferentes (estratégias) de forma flexível, sem alterar o código principal do personagem.</p>
+      <div class="buttons">
+        <button onclick="prevScreen()">Voltar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentScreen = 1;
+    let enemyType;
+    let correctHits;
+
+    function nextScreen() {
+      if (currentScreen < 4) {
+        document.getElementById(`screen${currentScreen}`).style.display = 'none';
+        currentScreen++;
+        document.getElementById(`screen${currentScreen}`).style.display = 'block';
+        if (currentScreen === 3) {
+          startGame();
+        }
+      }
+    }
+
+    function prevScreen() {
+      if (currentScreen > 1) {
+        document.getElementById(`screen${currentScreen}`).style.display = 'none';
+        currentScreen--;
+        document.getElementById(`screen${currentScreen}`).style.display = 'block';
+      }
+    }
+
+    function generateEnemyType() {
+      const types = ['fogo', 'gelo', 'comum'];
+      return types[Math.floor(Math.random() * types.length)];
+    }
+
+    function startGame() {
+      correctHits = 0;
+      enemyType = generateEnemyType();
+      updateEnemyInfo();
+      document.getElementById("nextBtn").disabled = true;
+    }
+
+    function updateEnemyInfo() {
+      document.getElementById('enemyInfo').textContent = `Inimigo do tipo: ${enemyType.toUpperCase()} | Acertos: ${correctHits}/3`;
+    }
+
+    function useAttack(tipo) {
+      let success =
+        (enemyType === 'fogo' && tipo === 'gelo') ||
+        (enemyType === 'gelo' && tipo === 'fogo') ||
+        (enemyType === 'comum' && tipo === 'padrão');
+
+      if (success) {
+        correctHits++;
+        if (correctHits >= 3) {
+          updateEnemyInfo();
+          alert('Parabéns! Você completou a fase com sucesso.');
+          document.getElementById("nextBtn").disabled = false;
+        } else {
+          enemyType = generateEnemyType();
+          updateEnemyInfo();
+        }
+      } else {
+        alert('Ataque ineficaz! A fase será reiniciada.');
+        startGame();
+      }
+    }
+
+    function resetGame() {
+      startGame();
+    }
+  </script>
+</body>
+</html>

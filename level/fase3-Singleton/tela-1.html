@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Fase Singleton - Jogo de Padrões</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1e1e1e;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 2em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .tela {
+      max-width: 800px;
+      width: 100%;
+      background: #2c2c2c;
+      border-radius: 12px;
+      padding: 2em;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    }
+    .botoes {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5em;
+    }
+    button {
+      padding: 0.8em 1.5em;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+    }
+    button:disabled {
+      background-color: #888;
+      cursor: not-allowed;
+    }
+    pre {
+      background: #111;
+      color: #0f0;
+      padding: 1em;
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Tela 1: Explicação do padrão -->
+  <div class="tela" id="tela-explicacao">
+    <h2>Padrão de Projeto: Singleton</h2>
+    <p>
+      O padrão Singleton garante que uma classe tenha apenas uma instância e fornece um ponto de acesso global a ela.
+      É útil quando apenas um objeto precisa coordenar ações no sistema, como configurações, logs ou conexões.
+    </p>
+    <p>
+      Imagine um jogo onde existe apenas um baú mágico: todos os jogadores devem acessar esse mesmo baú. Essa única
+      instância controlada representa o uso do Singleton.
+    </p>
+    <div class="botoes">
+      <span></span>
+      <button onclick="mostrarTela('tela-codigo')">Avançar</button>
+    </div>
+  </div>
+
+  <!-- Tela 2: Exemplo com código -->
+  <div class="tela" id="tela-codigo" style="display: none;">
+    <h2>Exemplo de Singleton</h2>
+    <pre>
+class BauMagico {
+  constructor() {
+    if (BauMagico.instance) {
+      return BauMagico.instance;
+    }
+    this.itens = ['espada', 'pocao'];
+    BauMagico.instance = this;
+  }
+
+  acessar() {
+    return this.itens;
+  }
+}
+
+const jogador1 = new BauMagico();
+const jogador2 = new BauMagico();
+console.log(jogador1 === jogador2); // true</pre>
+    <div class="botoes">
+      <button onclick="mostrarTela('tela-explicacao')">Voltar</button>
+      <button onclick="mostrarTela('tela-jogo')">Avançar</button>
+    </div>
+  </div>
+
+  <!-- Tela 3: Fase jogável -->
+  <div class="tela" id="tela-jogo" style="display: none; text-align: center;">
+    <h2>Fase Singleton – O Baú Mágico</h2>
+    <p id="mensagem-bau">Clique para tentar acessar o baú mágico.</p>
+    <button id="botao-bau" onclick="acessarBau()">Tentar Acessar</button><br><br>
+    <div class="botoes">
+      <button onclick="mostrarTela('tela-codigo')">Voltar</button>
+      <button id="botao-avancar" onclick="mostrarTela('tela-final')" disabled>Avançar</button>
+    </div>
+  </div>
+
+  <!-- Tela 4: Explicação da fase -->
+  <div class="tela" id="tela-final" style="display: none;">
+    <h2>Relação com o Singleton</h2>
+    <p>
+      Nesta fase, o baú mágico representa a instância única do padrão Singleton. Quando o baú está em uso, nenhum
+      outro jogador pode acessá-lo. Isso ilustra como o Singleton controla o acesso e garante que apenas uma instância
+      esteja ativa por vez.
+    </p>
+    <div class="botoes">
+      <button onclick="mostrarTela('tela-jogo')">Voltar</button>
+      <span></span>
+    </div>
+  </div>
+
+  <script>
+    function mostrarTela(id) {
+      document.querySelectorAll('.tela').forEach(t => t.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    let bauEmUso = false;
+    let acessoRealizado = false;
+    const itens = ['espada lendária', 'poção rara', 'escudo místico', 'anel do poder', 'capa invisível'];
+
+    function acessarBau() {
+      const mensagem = document.getElementById('mensagem-bau');
+      const btnAvancar = document.getElementById('botao-avancar');
+
+      if (!bauEmUso) {
+        bauEmUso = true;
+        acessoRealizado = true;
+        const item = itens[Math.floor(Math.random() * itens.length)];
+        mensagem.textContent = `Você acessou o baú com sucesso e encontrou: ${item}!`;
+        btnAvancar.disabled = false;
+        btnAvancar.style.backgroundColor = '#4CAF50';
+      } else {
+        mensagem.textContent = 'O baú já está em uso! Tente novamente mais tarde.';
+      }
+
+      setTimeout(() => {
+        bauEmUso = false;
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>

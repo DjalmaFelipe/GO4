@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <section class="card">
         <section class="cabecalho">
             <article>GO4</article>
         </section>
-        <section class="entradas">
-            <img><input placeholder="email">
-            <img><input placeholder="senha">
-        </section>
-        <section class="acesso">
-                <button><a href="menu/menu.html">Compile and Run</a></button>
-        </section>
+        <form>
+            <section class="entradas">
+                <img><input placeholder="usuario" id="username">
+                <img><input placeholder="senha" type="password" id="password">
+            </section>
+            <section class="acesso">
+                <button type="submit" id="login">Compile and Run</button>
+            </section>
+        </form>
+    </section>
+    <section>
+        <a href="./cadastro/cadastro.html" class="cadastro">cadastre-se</a>
     </section>
 </body>
 </html>

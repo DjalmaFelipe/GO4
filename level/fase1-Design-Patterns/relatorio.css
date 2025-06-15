@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #F2F0EF;
+    font-family: cursive;
+    color: mediumaquamarine;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.frase {
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
+
+.resultado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20%;
+    width: 50%;
+    color: mediumaquamarine;
+}
+
+img {
+   height: 100%;
+   width: 20%;
+   box-shadow: 3px 3px gray;
+}
+
+.resultado-por-questao {
+    display: flex;
+    justify-content: space-around;
+    height: 5%;
+    width: 50%;
+    color: black;
+}
+
+.questao {
+    background-color: black;
+    color: mediumaquamarine;
+    width: 15%;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

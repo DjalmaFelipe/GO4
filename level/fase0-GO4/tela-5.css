@@ -1,0 +1,37 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    background-image: url(/images/fases/Go4-atual.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pular {
+    position: fixed;
+    top: 92%;
+    left: 92%;
+    color: rgb(224, 222, 222);
+    cursor: pointer;
+}
+.arrow {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.card {
+    background-color: rgba(20, 20, 20, 0.5);
+    color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    font-style: bold;
+    text-align: center;
+    font-family:monospace;
+}

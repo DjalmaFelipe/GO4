@@ -1,21 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/menu/style-menu.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style-menu.css">
+  <script src="./script-menu.js" defer></script>
+  <title>Menu</title>
 </head>
+
 <body>
-    <section class="banner">
-        <article class="esquerda">
-            <div class="quadro">
+  <audio loop id="trilha">
+    <source src="/audio/Menu.ogg" type="audio/mpeg">
+  </audio>
 
-            </div>
-        </article>
-        <article class="direita">
+  <div class="perfil" id="perfil">
+    <div class="info-perfil">
+      <svg class="icon-perfil" fill="#000000" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <title></title>
+          <g id="about">
+            <path d="M16,16A7,7,0,1,0,9,9,7,7,0,0,0,16,16ZM16,4a5,5,0,1,1-5,5A5,5,0,0,1,16,4Z"></path>
+            <path
+              d="M17,18H15A11,11,0,0,0,4,29a1,1,0,0,0,1,1H27a1,1,0,0,0,1-1A11,11,0,0,0,17,18ZM6.06,28A9,9,0,0,1,15,20h2a9,9,0,0,1,8.94,8Z">
+            </path>
+          </g>
+        </g>
+      </svg>
+      <span class="usuario" id="usuario-logado"></span>
+    </div>
+  </div>
+  <div class="svg" id="musica">
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="420.000000pt" height="310.000000pt"
+        viewBox="0 0 420.000000 310.000000" preserveAspectRatio="xMidYMid meet">
 
-        </article>
-    </section>
+        <g transform="translate(0.000000,310.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
+            <path d="M1954 2677 c-60 -46 -256 -194 -435 -329 l-326 -246 -159 -4 c-174 -4 -209 -13 -265 -75 -64 -68 -64 -69 -64 -403 0 -334 0 -335 64 -403 56 -62
+            91 -71 264 -75 l158 -4 417 -316 c229 -173 429 -322 444 -331 23 -13 30 -13
+            52 -1 20 10 31 29 45 79 73 255 105 578 105 1041 -1 421 -28 748 -83 980 -31
+            133 -51 170 -90 170 -10 0 -67 -37 -127 -83z" />
+            <path d="M3060 2560 c-28 -28 -26 -42 19 -124 117 -212 186 -472 198 -741 12
+            -299 -43 -562 -178 -844 -63 -132 -67 -160 -29 -181 40 -21 71 7 127 115 224
+            431 260 976 96 1450 -51 148 -141 325 -170 336 -34 13 -40 12 -63 -11z" />
+            <path d="M2789 2336 c-36 -17 -35 -50 4 -135 166 -363 168 -776 6 -1146 -21
+            -50 -39 -100 -39 -112 0 -33 40 -56 74 -43 50 19 142 253 183 465 23 123 23
+            386 0 510 -23 120 -90 326 -130 399 -35 64 -61 81 -98 62z" />
+            <path d="M2484 2085 c-16 -25 -16 -30 15 -119 81 -233 80 -455 -1 -693 -30
+            -88 -30 -93 -14 -118 22 -33 69 -34 91 -2 23 36 63 161 82 256 20 103 22 315
+            4 411 -19 99 -70 249 -92 271 -27 27 -65 24 -85 -6z" />
+        </g>
+    </svg>
+  </div>
+  <div class="container-slider">
+    <button id="prev-button"><img src="../images/menu/arrow.png" alt="prev-button"></button>
+    <div class="container-images">
+      <img src="../images/menu/fase0.png" alt="" class="slider on" id="fase0">
+      <img src="../images/menu/Design-Pattern.png" alt="" class="slider" id="fase1">
+      <img src="../images/menu/Strategy.png" alt="" class="slider" id="fase2">
+      <img src="../images/menu/singleton.png" alt="" class="slider" id="fase3">
+    </div>
+    <button id="next-button"><img src="../images/menu/arrow.png" alt="next-button"></button>
+  </div>
 </body>
+
 </html>

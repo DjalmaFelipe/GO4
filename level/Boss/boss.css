@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.forca {
+    background-color: #657981;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lado-direito {
+    height: 100%;
+    width: 100%;
+}
+
+.personagem {
+    box-sizing: border-box;
+    height: 100%;
+    width: 40%;
+    background-image: url(/images/fases/inteiro.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.charada {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-sizing: border-box;
+    padding: 0% 10%;
+}
+
+.letra-charada {
+    height: 40%;
+    width: 10%;
+    border-bottom: 5px solid black;
+}
+
+.dica {
+    height: 50%;
+    display: flex;
+    align-items: end;
+    color: white;
+    font-family: cursive;
+}
+
+.teclado {
+    /* background-color: antiquewhite; */
+    /* background-color: #30383f48; */
+    background-color: #657981;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0% 15%;
+    box-sizing: border-box;
+}
+
+.teclas {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.letra {
+    height: 70%;
+    width: 8%;
+    /* background-color: black; */
+    background-color: #2f3c41;
+    box-shadow: 2px 2px black;
+    /* box-shadow: 2px 2px slategray; */
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    /* color: #08bcd4; */
+    font-family: cursive;
+}
+
+
+.segundo-grupo {
+    padding: 0% 3%;
+    box-sizing: border-box;
+}
+.terceiro-grupo {
+    padding: 0% 6%;
+    box-sizing: border-box;
+}
